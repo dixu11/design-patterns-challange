@@ -9,5 +9,8 @@ public class Demo {
                 "Wojska Polskiego 2");
         //wykonaj polecenie z ar
 
+        Person.PersonBuilder builder = new Person.PersonBuilder();
+
+
     }
 }

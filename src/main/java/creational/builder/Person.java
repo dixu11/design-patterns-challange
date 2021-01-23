@@ -6,37 +6,13 @@ import java.util.Objects;
 public class Person {
 
     private String fullName;
-    private LocalDate birthDate;
-    private int phone;
     private String mail;
     private String address;
+    private LocalDate birthDate;
+    private int phone;
 
-    public Person(String fullName, String mail, String address) {
-        this.fullName = fullName;
-        this.mail = mail;
-        this.address = address;
-    }
+    private Person() {
 
-    public Person(String fullName, LocalDate birthDate, int phone, String mail, String address) {
-        this.fullName = fullName;
-        this.birthDate = birthDate;
-        this.phone = phone;
-        this.mail = mail;
-        this.address = address;
-    }
-
-    public Person(String fullName, LocalDate birthDate, String mail, String address) {
-        this.fullName = fullName;
-        this.birthDate = birthDate;
-        this.mail = mail;
-        this.address = address;
-    }
-
-    public Person(String fullName, int phone, String mail, String address) {
-        this.fullName = fullName;
-        this.phone = phone;
-        this.mail = mail;
-        this.address = address;
     }
 
 
@@ -65,4 +41,16 @@ public class Person {
                 ", address='" + address + '\'' +
                 '}';
     }
+
+   static class PersonBuilder {
+
+       private Person person = new Person();
+
+       public PersonBuilder(String fullName, String mail, String address) {
+           person.fullName = fullName;
+           person.mail = mail;
+           person.address = address;
+       }
+   }
+
 }
