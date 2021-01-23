@@ -15,8 +15,8 @@ public class DemoTree {
       jesień - liście opadają
         */
 
-       /*
-       MyTree tree = new MyTree();
+
+      /* MyTree tree = new MyTree();
         tree.show(); // wyświetla "drzewo nie ma liści"
         tree.setSeason(new SpringTreeStrategy());
         tree.show(); // wyświetla "drzewo kwitnie"
