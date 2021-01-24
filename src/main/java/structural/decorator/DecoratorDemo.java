@@ -10,15 +10,18 @@ public class DecoratorDemo {
         ChristmasTree simpleTree = new ChristmasTreeImpl();
         System.out.println(simpleTree.getDecoratedTree());
 
+
+        TreeWithLights treeWithLights = new TreeWithLights(new ChristmasTreeImpl());
         /*Twój kod przygotowujący drzewko świąteczne udekorowane światełkami*/
-        //System.out.println(treeWithLights.getDecoratedTree());
+        System.out.println(treeWithLights.getDecoratedTree());
         // -> ma drukować "świąteczne drzewko ze światełkami
 
+        ChristmasTree treeWithBaublesAndLights = new TreeWithLights(new ChristmasBaubles(new ChristmasTreeImpl()));
         /*Twój kod przygotowujący drzewko świąteczne udekorowane bombkami i światełkami*/
-        //System.out.println(treeWithBaublesAndLights.getDecoratedTree());
+        System.out.println(treeWithBaublesAndLights.getDecoratedTree());
         // -> ma drukować "świąteczne drzewko ze światełkami z bombkami"
 
-        //System.out.println(treeWithLights.getLightsColor());
+        System.out.println(treeWithLights.getLightsColor());
         // -> ma drukować kolor światełek
 
     }
