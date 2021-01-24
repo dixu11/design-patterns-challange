@@ -42,15 +42,42 @@ public class Person {
                 '}';
     }
 
+    public static PersonBuilder builder(){
+        return new PersonBuilder();
+    }
+
    static class PersonBuilder {
 
        private Person person = new Person();
 
-       public PersonBuilder(String fullName, String mail, String address) {
-           person.fullName = fullName;
-           person.mail = mail;
-           person.address = address;
+       public PersonBuilder withFullName(String fullName){
+          person.fullName = fullName;
+           return this;
        }
-   }
+       public PersonBuilder withMail(String mail){
+           person.mail = mail;
+           return this;
+       }
+       public PersonBuilder withAddress(String address){
+           person.address = address;
+           return this;
+       }
 
+       public PersonBuilder withTel(int number){
+           person.phone = number;
+           return this;
+       }
+
+       public PersonBuilder bornIn(LocalDate birthday){
+           person.birthDate = birthday;
+           return this;
+       }
+
+       public Person build(){
+           return person;
+       }
+
+
+
+   }
 }
