@@ -2,16 +2,16 @@ package behavioral.mediator;
 
 public class Mediator {
 
-    Button button = new Button(this);
-    Fan fan = new Fan(this);
-    behavioral.mediator.fan_simulation.PowerSupplier supplier = new behavioral.mediator.fan_simulation.PowerSupplier();
+    private Button button;
+    private Fan fan;
+    private PowerSupplier supplier;
 
     public Mediator() {
 
     }
 
     public boolean isFanOn() {
-       return fan.isOn();
+        return fan.isOn();
     }
 
     public void turnOffFan() {
@@ -28,5 +28,17 @@ public class Mediator {
 
     public void stopSupplier() {
         supplier.stop();
+    }
+
+    public void setButton(Button button) {
+        this.button = button;
+    }
+
+    public void setFan(Fan fan) {
+        this.fan = fan;
+    }
+
+    public void setSupplier(PowerSupplier supplier) {
+        this.supplier = supplier;
     }
 }

@@ -3,10 +3,15 @@ package behavioral.mediator;
 public class Main {
     public static void main(String[] args) {
 
-        behavioral.mediator.fan_simulation.Mediator mediator = new behavioral.mediator.fan_simulation.Mediator();
-        behavioral.mediator.fan_simulation.PowerSupplier supplier = new behavioral.mediator.fan_simulation.PowerSupplier();
+        Mediator mediator = new Mediator( );
+
+        PowerSupplier supplier = new PowerSupplier();
         Fan fan = new Fan(mediator);
         Button button = new Button(mediator);
+
+        mediator.setButton(button);
+        mediator.setFan(fan);
+        mediator.setSupplier(supplier);
 
         System.out.println("Power supplier should be off. Is it on? " + supplier.isOn());
         button.push();

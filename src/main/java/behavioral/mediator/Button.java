@@ -2,9 +2,9 @@ package behavioral.mediator;
 
 public class Button {
 
-    private behavioral.mediator.fan_simulation.Mediator mediator;
+    private Mediator mediator;
 
-    public Button(behavioral.mediator.fan_simulation.Mediator mediator) {
+    public Button(Mediator mediator) {
         this.mediator = mediator;
     }
 
