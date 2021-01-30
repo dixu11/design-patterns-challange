@@ -1,13 +1,13 @@
 package behavioral.mediator;
 
-public class Demo {
+public class Main {
     public static void main(String[] args) {
-        PowerSupplier supplier = new PowerSupplier();
-        Mediator mediator = new Mediator();
+
+        behavioral.mediator.fan_simulation.Mediator mediator = new behavioral.mediator.fan_simulation.Mediator();
+        behavioral.mediator.fan_simulation.PowerSupplier supplier = new behavioral.mediator.fan_simulation.PowerSupplier();
         Fan fan = new Fan(mediator);
         Button button = new Button(mediator);
-        mediator.setFan(fan);
-        mediator.setSupplier(supplier);
+
         System.out.println("Power supplier should be off. Is it on? " + supplier.isOn());
         button.push();
         System.out.println("Power supplier should be on. Is it on? " + supplier.isOn());

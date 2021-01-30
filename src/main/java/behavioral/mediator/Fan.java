@@ -3,10 +3,9 @@ package behavioral.mediator;
 public class Fan {
 
     private boolean on;
-    private Mediator mediator;
+    behavioral.mediator.fan_simulation.Mediator mediator;
 
-    public Fan(Mediator mediator) {
-
+    public Fan(behavioral.mediator.fan_simulation.Mediator mediator) {
         this.mediator = mediator;
     }
 

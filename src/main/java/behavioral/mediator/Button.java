@@ -2,17 +2,17 @@ package behavioral.mediator;
 
 public class Button {
 
-    private Mediator mediator;
+    private behavioral.mediator.fan_simulation.Mediator mediator;
 
-    public Button(Mediator mediator) {
+    public Button(behavioral.mediator.fan_simulation.Mediator mediator) {
         this.mediator = mediator;
     }
 
     public void push() {
         if (mediator.isFanOn()) {
-            mediator.turnFanOff();
+            mediator.turnOffFan();
         } else {
-            mediator.turnFanOn();
+            mediator.turnOnFan();
         }
     }
 
