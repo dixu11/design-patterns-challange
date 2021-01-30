@@ -1,0 +1,3 @@
+Czysty Kod
+Rusz Głową: Wzorce projektowe
+CZysta Architektura
