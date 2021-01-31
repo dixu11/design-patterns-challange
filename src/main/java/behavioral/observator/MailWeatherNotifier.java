@@ -1,18 +1,18 @@
 package behavioral.observator;
 
-public class MailWeatherNotifier {
+public class MailWeatherNotifier implements WeatherListener{
 
 
-    private WeatherStation weatherStation;
-
-
-    public MailWeatherNotifier(WeatherStation weatherStation) {
-        this.weatherStation = weatherStation;
+    public MailWeatherNotifier() {
     }
 
-    public void sendWeatherInfo() {
-        System.out.printf("Aktualna pogoda: ... stopni i jest: ...");
+    public void sendWeatherInfo(int temp, WeatherType type) {
+        System.out.printf("Aktualna pogoda: %d stopni i jest: %s\n", temp,type);
     }
 
 
+    @Override
+    public void reactToWeatherChanged(int temp, WeatherType type) {
+        sendWeatherInfo(temp,type);
+    }
 }

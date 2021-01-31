@@ -4,12 +4,12 @@ import java.util.Random;
 
 public class Demo {
     public static void main(String[] args) {
+        MailWeatherNotifier notifier = new MailWeatherNotifier();
+        FireWarningNotifier notifier2 = new FireWarningNotifier();
         WeatherStation station = new WeatherStation();
-        MailWeatherNotifier notifier = new MailWeatherNotifier(station);
 
-
-
-
+        station.addListener(notifier);
+        station.addListener(notifier2);
 
 
         Thread thread = new Thread(new Runnable() {
@@ -23,7 +23,7 @@ public class Demo {
                         e.printStackTrace();
                     }
                     station.changeWeather();
-                    System.out.println(station);
+                   // System.out.println(station);
                 }
             }
         });
