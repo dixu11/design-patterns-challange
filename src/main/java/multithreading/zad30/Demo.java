@@ -13,7 +13,7 @@ public class Demo {
 //        W mainie na koniec zaprezentuj ile znaków ma wynik konkatenacji. Przetestuj scenariusz w
 //        którym ustawiasz tyle razy doklejanie tekstu aby trwało to dłużej niż sekundę i upewnij się,
 //        że Twoja metoda abort() działa poprawnie.
-        ConcatenationTask task = new ConcatenationTask(100_000, "D");
+        ConcatenationTask task = new ConcatenationTask(1_000_000, "D");
         task.startTask();
 
         Thread thread = new Thread(new Runnable() {
@@ -27,7 +27,7 @@ public class Demo {
                 task.abort();
             }
         });
-        thread.start();
+        //thread.start();
 
 
         task.waitForTaskEnd();
@@ -73,6 +73,9 @@ class ConcatenationTask implements Runnable{
         //text += text;// źle -> DD, DDDD, DDDDDDDD,
         for (int i = 0; i < count; i++) {
             result += text; // dobrze -> DD, DDD, DDDD, DDDDD
+            if (i % 10_000 == 0) {
+                System.out.println(i);
+            }
             if (!running) {
                 System.out.println("Awaryjnie przerwane przy: "+ i );
                 return;
