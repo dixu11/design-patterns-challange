@@ -5,19 +5,18 @@ import java.util.Scanner;
 public abstract class TextConverter {
 
 
-
-    public void runConverter() {
+    public final void runConverter() {
         //TODO przerób te metodę na metodę szablonową -> przygotuj 2 klasy implementujące ten szablon
-       String sentence = load();
-       String sentenceBackward = compute(sentence);
+        String sentence = load();
+        String sentenceBackward = compute(sentence);
         present(sentenceBackward);
     }
 
-    public abstract String load();
+    protected abstract String load();
 
-    public String compute(String sentence) {
+    private String compute(String sentence) {
         String[] words = sentence.split(" ");
-       String sentenceBackward = "";
+        String sentenceBackward = "";
         for (int i = words.length - 1; i >= 0; i--) {
             String word = words[i];
             sentenceBackward += word + " ";
@@ -25,6 +24,6 @@ public abstract class TextConverter {
         return sentenceBackward;
     }
 
-    public abstract void present(String sentenceBackward);
+    protected abstract void present(String sentenceBackward);
 
 }
