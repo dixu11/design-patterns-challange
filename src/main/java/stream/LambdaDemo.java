@@ -1,5 +1,7 @@
 package stream;
 
+import java.util.Comparator;
+import java.util.Random;
 import java.util.Scanner;
 import java.util.function.*;
 
@@ -52,7 +54,13 @@ public class LambdaDemo {
         Integer number = intScanner.apply("Podaj liczbę od 1 do 10");
         System.out.println("Podano " + number);
 
+        //losowanie
+        Supplier<Integer> numberGenerator = () -> new Random().nextInt(10)+1; //1-10;
 
+        System.out.println("Wylosowano: " + numberGenerator.get());
+
+        Comparator<String> compareStringsByLength = (text1,text2) -> text1.length() - text2.length();
+        System.out.println(compareStringsByLength.compare("abc","abcd"));
     }
 
     public static void calculator(int number, Equation equation, int number2) {
