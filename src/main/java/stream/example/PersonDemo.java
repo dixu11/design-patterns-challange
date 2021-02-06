@@ -9,7 +9,7 @@ public class PersonDemo {
     //za zadanię można otrzymać 14 punktów po 1 za każdą zaimplementowaną abstrakcyjną metodę
 
     public static void main(String[] args) throws FileNotFoundException {
-        List<String> names = new ArrayList<>(Arrays.asList("Marcin", "Zbyszek", "Kasia", "Zosia", "Kasia", "Magda"));
+        List<String> names = new ArrayList<>(Arrays.asList("Marcin", "Zbyszek", "Kasia", "Zosia", "Kasia", "Magda","Iza"));
         int[] primeNumbers = {2, 79, 83, 41, 43, 47, 53, 59, 13, 17, 83, 31,
                 37, 61, 67, 89, 3, 5, 7, 7, 11, 71, 73, 97, 19,19, 19, 23, 29};
 
@@ -29,8 +29,11 @@ public class PersonDemo {
 
         System.out.println(shortName);
 
-
-
+        //odfiltrować krótkie imiona (do 4 znaków) i przygotować listę w której znajdą się długości tych imion
+        names.stream()
+                .filter(name -> name.length() < 5)
+                .map(name -> name.length())
+                .forEach(nameLength -> System.out.println(nameLength));
 
 
 
