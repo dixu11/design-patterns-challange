@@ -10,7 +10,7 @@ public class Demo {
         ObjectMapper mapper = new ObjectMapper();
 //        String json = mapper.writeValueAsString(person);  // wymagane getry!
 //        System.out.println(json);
-
+//git test
         String personJson = "{\"id\":1,\"fullName\":\"Damian Nowak\"}";
         Person person = mapper.readValue(personJson, Person.class); // wymagany konstr. bezparametrowy!
         System.out.println(person);
