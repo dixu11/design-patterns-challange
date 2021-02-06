@@ -12,7 +12,8 @@ public class Demo {
      * */
 
     public static void main(String[] args) {
-        showGuiInputAndOutputExample();
+        TextConverter textConverter = new GuiTextConverter();
+        textConverter.runConverter();
     }
 
     private static void showGuiInputAndOutputExample() {
